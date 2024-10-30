@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
-		String filePath = "task01/day.csv";
+		String filePath = "day.csv";
 		BufferedReader br = new BufferedReader(new FileReader(filePath)); // read the csv file
 
 		String line;
