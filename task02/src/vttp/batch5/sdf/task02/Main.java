@@ -57,7 +57,7 @@ public class Main {
 			board[pos[0]][pos[1]] = '.';
 		}
 
-		// Print expected output
+		// Print expected output format
 		System.out.println("Processing: " + filePath + "\n");
 		System.out.println("Board: \n");
 		for (char[] row : board) {
@@ -110,8 +110,8 @@ public class Main {
 		}
 		// Anti-diagonal check
 		if ((board[0][2] == player && board[1][1] == player && board[2][0] == '.') ||
-				(board[0][2] == player && board[2][0] == player && board[1][1] == '.') ||
-				(board[1][1] == player && board[2][0] == player && board[0][2] == '.')) {
+				(board[0][2] == player && board[1][1] == '.' && board[2][0] == player) ||
+				(board[0][2] == '.' && board[1][1] == player && board[2][0] == player)) {
 			return true;
 		}
 		return false;

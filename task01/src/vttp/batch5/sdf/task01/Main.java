@@ -24,7 +24,7 @@ public class Main {
 
 		ArrayList<BikeEntry> bikeEntries = new ArrayList<>();
 
-		while ((line = br.readLine()) != null) { // Read and process each line
+		while ((line = br.readLine()) != null) {
 			String[] values = line.split(",");
 
 			BikeEntry entry = BikeEntry.toBikeEntry(values); // Reading each line into a instance of BikeEntry
@@ -37,18 +37,18 @@ public class Main {
 				(b.getCasual() + b.getRegistered()),
 				(a.getCasual() + a.getRegistered())));
 
-		for (int i = 0; i < 5; i++) {
-			BikeEntry entry = bikeEntries.get(i);
-			int totalCyclists = entry.getCasual() + entry.getRegistered();
+		for (int i = 0; i < 5; i++) { // from the top 5 entries, extract the required information for the output
+			BikeEntry be = bikeEntries.get(i);
 
+			int totalCyclists = be.getCasual() + be.getRegistered();
 			String position = Positions[i];
-			String season = Utilities.toSeason(entry.getSeason());
-			String day = Utilities.toWeekday(entry.getWeekday());
-			String month = Utilities.toMonth(entry.getMonth());
-			String weather = WeatherConditions[entry.getWeather() - 1];
-			String holiday = entry.isHoliday() ? "a holiday" : "not a holiday";
+			String season = Utilities.toSeason(be.getSeason());
+			String day = Utilities.toWeekday(be.getWeekday());
+			String month = Utilities.toMonth(be.getMonth());
+			String weather = WeatherConditions[be.getWeather() - 1];
+			String holiday = be.isHoliday() ? "a holiday" : "not a holiday";
 
-			// Print expected output
+			// Print expected output format
 			System.out.printf(
 					"The %s(position) recorded number of cyclists was in %s (season), on a %s (day) in the month of %s (month). There were a total of %d (total) cyclists. The weather was %s (weather).\n"
 							+
