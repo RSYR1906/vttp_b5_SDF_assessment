@@ -53,7 +53,6 @@ public class Main {
 			else {
 				utilityMap.put("y=" + pos[0] + ", x=" + pos[1], 0);
 			}
-
 			// Reset the position to empty for the next iteration
 			board[pos[0]][pos[1]] = '.';
 		}
@@ -70,6 +69,7 @@ public class Main {
 		}
 	}
 
+	// Helper methods
 	private static boolean checkWin(char player) {
 		// Check rows, columns, and diagonals for three in a row for the given player
 		for (int i = 0; i < 3; i++) {
@@ -102,7 +102,6 @@ public class Main {
 				return true;
 			}
 		}
-
 		// Diagonal check
 		if ((board[0][0] == player && board[1][1] == player && board[2][2] == '.') ||
 				(board[0][0] == player && board[1][1] == '.' && board[2][2] == player) ||
@@ -115,7 +114,6 @@ public class Main {
 				(board[1][1] == player && board[2][0] == player && board[0][2] == '.')) {
 			return true;
 		}
-
 		return false;
 	}
 }

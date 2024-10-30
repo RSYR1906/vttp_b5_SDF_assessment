@@ -7,9 +7,9 @@ import vttp.batch5.sdf.task01.models.BikeEntry;
 public class Main {
 
 	// attributes not in Utilities class
-	private static final String[] POSITIONS = { "highest", "second highest", "third highest", "fourth highest",
+	private static final String[] Positions = { "highest", "second highest", "third highest", "fourth highest",
 			"fifth highest" };
-	private static final String[] WEATHER_CONDITIONS = { "Clear, Few clouds, Partly cloudy, Partly cloudy",
+	private static final String[] WeatherConditions = { "Clear, Few clouds, Partly cloudy, Partly cloudy",
 			"Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist",
 			"Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds",
 			"Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog" }; // Replace as needed based on Readme.txt
@@ -41,11 +41,11 @@ public class Main {
 			BikeEntry entry = bikeEntries.get(i);
 			int totalCyclists = entry.getCasual() + entry.getRegistered();
 
-			String position = POSITIONS[i];
+			String position = Positions[i];
 			String season = Utilities.toSeason(entry.getSeason());
 			String day = Utilities.toWeekday(entry.getWeekday());
 			String month = Utilities.toMonth(entry.getMonth());
-			String weather = WEATHER_CONDITIONS[entry.getWeather() - 1];
+			String weather = WeatherConditions[entry.getWeather() - 1];
 			String holiday = entry.isHoliday() ? "a holiday" : "not a holiday";
 
 			// Print expected output
